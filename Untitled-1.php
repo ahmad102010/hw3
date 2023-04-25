@@ -77,6 +77,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
 	$stmt = $conn->prepare("INSERT INTO mydb(name, email, password, gender) VALUES ('$name','$email','$password','$gender')");
+	$stmt.("INSERT INTO mydb(name, email, password, gender) VALUES ('$name','$email','$password','$gender')");
+
 	$stmt->execute();
 
 	$stmt->close();
